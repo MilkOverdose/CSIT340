@@ -1,4 +1,5 @@
 import { useState } from "react";
+import About from "./about";
 
 export default function App() {
   const [dark, setDark] = useState(false);
@@ -16,6 +17,7 @@ export default function App() {
       >
         {dark ? "☀️ Light mode" : "🌙 Dark mode"}
       </button>
+      <About />
     </main>
   );
 }
