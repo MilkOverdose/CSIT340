@@ -1,21 +1,14 @@
 import { useState } from "react";
-import About from "./about";
+import About from "./About";
 import Skills from "./Skills";
-import ProjectCard from "./ProjectCard";
-
+import Projects from "./Projects";
 
 export default function App() {
   const [dark, setDark] = useState(false);
 
-  const projects = [
-  { id: 1, title: "Name Page", description: "My first React site." },
-  { id: 2, title: "Dark Mode Toggle", description: "Practiced useState." },
-  { id: 3, title: "Portfolio", description: "Built with React and Tailwind." },
-];
-
   return (
     <main
-      className={`min-h-screen flex flex-col items-center justify-center gap-6 transition-colors duration-500 ${
+      className={`min-h-screen py-12 flex flex-col items-center gap-10 transition-colors duration-500 ${
         dark ? "bg-gray-900" : "bg-linear-to-br from-indigo-500 to-purple-700"
       }`}
     >
@@ -27,21 +20,8 @@ export default function App() {
         {dark ? "☀️ Light mode" : "🌙 Dark mode"}
       </button>
       <About />
+      <Skills />
+      <Projects />
     </main>
-  );
-}
-
-export default function Projects() {
-  return (
-    <section className="max-w-md w-full mx-auto px-4">
-      <h2 className="text-2xl font-semibold text-white text-center mb-3">
-        Projects
-      </h2>
-      <div className="grid gap-3">
-        {projects.map((p) => (
-          <ProjectCard key={p.id} title={p.title} description={p.description} />
-        ))}
-      </div>
-    </section>
   );
 }
