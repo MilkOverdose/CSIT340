@@ -1,5 +1,6 @@
 import { useState } from "react";
 import About from "./about";
+import Skills from "./Skills";
 
 export default function App() {
   const [dark, setDark] = useState(false);
